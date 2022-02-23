@@ -1,11 +1,18 @@
 from docx import Document
+from docx.shared import Inches 
 
-document = Document()
+doc = Document()
+
+doc.add_picture(
+    "musharraf.png",
+    width=Inches(2.0)
+
+)
 
 name = input("What is your name : ")
 phone = input("What is your phone no. ")
 email = input("What is your email : ")
 
-document.add_paragraph(name + " | " + phone + " | " + email)
+doc.add_paragraph(name + " | " + phone + " | " + email)
 
-document.save("my-cv.docx")
+doc.save("my-cv.docx")
